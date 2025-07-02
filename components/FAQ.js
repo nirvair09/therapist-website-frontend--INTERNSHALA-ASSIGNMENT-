@@ -25,7 +25,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 px-4 max-w-3xl mx-auto" data-aos="fade-up">
+    <section className="py-20 px-40 w-full mx-auto bg-[#f2f1e8]" data-aos="fade-up">
       <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-12 text-left">
         Frequently Asked Questions
       </h2>
@@ -54,6 +54,10 @@ export default function FAQ() {
             </div>
           </div>
         ))}
+      </div>
+      {/* Divider Line */}
+      <div className="flex justify-center mt-32 mb-8">
+        <div className="w-300 h-px bg-gray-500"></div>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
 
 export default function Services() {
   return (
-    <div className="bg-pink-50 w-full">
+    <div className="bg-[#f2f1e8] w-full">
       <section className="py-20 px-4 max-w-6xl mx-auto" data-aos="fade-up">
         {/* Intro Text */}
         <div className="text-center max-w-3xl mx-auto mb-12">

@@ -12,7 +12,7 @@ export default function VideoHero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden bg-[#fdf5e6]">
+    <section className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden bg-[#f2f1e8]">
       {/* Video wrapper with padding */}
       <div className="w-full h-full p-6 md:p-16">
         <video

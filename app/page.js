@@ -8,21 +8,17 @@ import Services from "../components/Services";
 import Rates from "../components/Rates";
 import QuoteSection from "../components/QuoteSection";
 
-
 export default function Home() {
   return (
     <div>
-      <Header/>
-      <VideoHero/>
+      <Header />
+      <VideoHero />
       <Hero />
-      <Services/>
-      <Rates/>
-      <QuoteSection/>
-      <div className="bg-[#FFF9F0]">
-
+      <Services />
+      <Rates />
+      <QuoteSection />
       <About />
       <FAQ />
-      </div>
       <ContactForm />
     </div>
   );

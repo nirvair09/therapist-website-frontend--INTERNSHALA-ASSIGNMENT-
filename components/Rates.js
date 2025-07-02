@@ -2,7 +2,7 @@
 
 export default function Rates() {
   return (
-    <div className="bg-green-50 w-full">
+    <div className="bg-[#95b0b1] w-full">
       <section
         className="py-20 px-4 max-w-3xl mx-auto text-center"
         data-aos="fade-up"

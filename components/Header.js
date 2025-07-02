@@ -2,7 +2,7 @@
 
 export default function LogoSection() {
   return (
-    <section className="w-full bg-[#fdf5e6] shadow-sm">
+    <section className="w-full bg-[#f2f1e8] shadow-sm">
       <div
         className="max-w-6xl mx-auto flex items-start"
         style={{
