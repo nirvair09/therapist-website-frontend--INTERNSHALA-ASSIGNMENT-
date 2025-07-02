@@ -17,6 +17,10 @@ export default function Services() {
             and space to work toward wellness and peace.
           </p>
         </div>
+        {/* Divider Line */}
+      <div className="flex justify-center mt-32 mb-8">
+        <div className="w-300 h-px bg-gray-500"></div>
+      </div>
 
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-serif text-[#333333] mb-12 text-center">

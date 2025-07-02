@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 const faqItems = [
   {
     question: "Do you accept insurance?",
@@ -16,24 +18,40 @@ const faqItems = [
 ];
 
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <section
-      className="py-20 px-4 max-w-3xl mx-auto"
-      data-aos="fade-up"
-    >
-      <h2 className="text-3xl md:text-4xl font-serif text-center text-textDark mb-12">
+    <section className="py-20 px-4 max-w-3xl mx-auto" data-aos="fade-up">
+      <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-12 text-left">
         Frequently Asked Questions
       </h2>
 
-      <div className="space-y-8">
+      <div className="space-y-4">
         {faqItems.map((item, index) => (
-          <div key={index} className="text-center">
-            <h3 className="text-xl md:text-2xl font-semibold text-textDark mb-2">
+          <div key={index} className="border-b border-gray-300 pb-4">
+            <button
+              onClick={() => handleToggle(index)}
+              className="w-full text-left text-lg md:text-xl font-semibold text-gray-800 focus:outline-none flex justify-between items-center"
+            >
               {item.question}
-            </h3>
-            <p className="text-lg text-textLight leading-relaxed">
-              {item.answer}
-            </p>
+              <span className="ml-2 text-gray-500">
+                {openIndex === index ? "−" : "+"}
+              </span>
+            </button>
+
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                openIndex === index ? "max-h-40 mt-2" : "max-h-0"
+              }`}
+            >
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                {item.answer}
+              </p>
+            </div>
           </div>
         ))}
       </div>

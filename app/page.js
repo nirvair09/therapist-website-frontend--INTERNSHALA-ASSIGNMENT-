@@ -1,5 +1,4 @@
 import Hero from "../components/Hero";
-
 import About from "../components/About";
 import FAQ from "../components/FAQ";
 import ContactForm from "../components/ContactForm";
@@ -13,14 +12,17 @@ import QuoteSection from "../components/QuoteSection";
 export default function Home() {
   return (
     <div>
-      {/* <Header/> */}
+      <Header/>
       <VideoHero/>
       <Hero />
       <Services/>
       <Rates/>
       <QuoteSection/>
+      <div className="bg-[#FFF9F0]">
+
       <About />
       <FAQ />
+      </div>
       <ContactForm />
     </div>
   );

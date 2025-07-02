@@ -1,21 +1,28 @@
 "use client";
 
-export default function Header() {
+export default function LogoSection() {
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
+    <section className="w-full bg-[#fdf5e6] shadow-sm">
       <div
-        className="max-w-6xl mx-auto flex items-center justify-between px-4 py-4"
+        className="max-w-6xl mx-auto flex items-start"
+        style={{
+          height: "90px",           // Smaller header height
+          paddingTop: "15px",       // Equal top and left spacing
+          paddingLeft: "1px",
+        }}
         data-aos="fade-down"
       >
-        {/* Logo */}
         <a href="/">
           <img
             src="/logo.png"
             alt="Dr. Serena Blake Logo"
-            className="h-12 w-auto max-w-[250px] object-contain"
+            style={{
+              height: "90px",       // Bigger logo
+            }}
+            className="w-auto object-contain"
           />
         </a>
       </div>
-    </header>
+    </section>
   );
 }

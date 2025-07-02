@@ -1,16 +1,27 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 export default function VideoHero() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
+
   return (
-    <section className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden">
-      {/* Video wrapper with light pink background and padding */}
-      <div className="w-full h-full p-6 md:p-16 bg-pink-100 rounded-xl">
+    <section className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden bg-[#fdf5e6]">
+      {/* Video wrapper with padding */}
+      <div className="w-full h-full p-6 md:p-16">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover rounded-xl"
+          className="w-full h-full object-cover"
         >
           <source src="/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -30,7 +41,7 @@ export default function VideoHero() {
         </h2>
         <a
           href="#contact"
-          className="inline-block bg-primary hover:bg-pink-200 text-textDark font-semibold px-6 py-3 rounded transition"
+          className="inline-block bg-blue-200/50 hover:bg-blue-300/50 text-gray-600 font-semibold px-8 py-3 rounded-full transition"
         >
           Book a Free Consult
         </a>
