@@ -2,8 +2,10 @@
 
 export default function Services() {
   return (
-    <div className="bg-[#f2f1e8] w-full">
-      <section className="py-20 px-4 max-w-6xl mx-auto" data-aos="fade-up">
+    <div className="bg-[#f2f1e8] w-full" data-aos="fade"
+>
+      <section className="py-20 px-4 max-w-6xl mx-auto" data-aos="fade"
+>
         {/* Intro Text */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="text-2xl md:text-3xl text-[#333333] leading-snug font-sans mb-4">
@@ -23,7 +25,7 @@ export default function Services() {
       </div>
 
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-serif text-[#333333] mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-serif text-[#333333] mb-40 text-center">
           Areas of Focus
         </h2>
 
@@ -34,7 +36,7 @@ export default function Services() {
             <img
               src="/service1.jpg"
               alt="Therapy for Healthcare Providers and Students"
-              className="w-32 h-32 rounded-full object-cover mb-6"
+              className="w-64 h-64 rounded-full object-cover mb-6"
             />
             <h3 className="text-xl md:text-2xl font-serif text-[#333333] mb-4">
               Therapy for Healthcare Providers and Students
@@ -55,7 +57,7 @@ export default function Services() {
             <img
               src="/service2.jpg"
               alt="Therapy for Trauma and Grief"
-              className="w-32 h-32 rounded-full object-cover mb-6"
+              className="w-64 h-64 rounded-full object-cover mb-6"
             />
             <h3 className="text-xl md:text-2xl font-serif text-[#333333] mb-4">
               Therapy for Trauma and Grief
@@ -75,7 +77,7 @@ export default function Services() {
             <img
               src="/service3.jpg"
               alt="Therapy for Second Generation Individuals In Immigrant Families"
-              className="w-32 h-32 rounded-full object-cover mb-6"
+              className="w-64 h-64 rounded-full object-cover mb-6"
             />
             <h3 className="text-xl md:text-2xl font-serif text-[#333333] mb-4">
               Therapy for Second Generation Individuals In Immigrant Families

@@ -4,7 +4,8 @@ export default function About() {
   return (
     <section
       className="py-20 px-4 w-full mx-auto text-center bg-[#f2f1e8]"
-      data-aos="fade-up"
+      data-aos="fade"
+
     >
       <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-6">
         Jennifer Hahm, Ph.D., Licensed Psychologist

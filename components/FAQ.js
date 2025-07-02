@@ -25,7 +25,8 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 px-40 w-full mx-auto bg-[#f2f1e8]" data-aos="fade-up">
+    <section className="py-20 px-40 w-full mx-auto bg-[#f2f1e8]" data-aos="fade"
+>
       <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-12 text-left">
         Frequently Asked Questions
       </h2>

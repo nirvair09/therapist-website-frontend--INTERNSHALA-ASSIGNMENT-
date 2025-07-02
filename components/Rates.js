@@ -2,10 +2,12 @@
 
 export default function Rates() {
   return (
-    <div className="bg-[#95b0b1] w-full">
+    <div className="bg-[#95b0b1] w-full" data-aos="fade"
+>
       <section
         className="py-20 px-4 max-w-3xl mx-auto text-center"
-        data-aos="fade-up"
+        data-aos="fade"
+
       >
         <h2 className="text-3xl md:text-4xl font-serif text-[#333333] mb-8">
           Rates and Insurance

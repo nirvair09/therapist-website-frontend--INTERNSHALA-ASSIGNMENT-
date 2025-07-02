@@ -2,7 +2,8 @@
 
 export default function QuoteSection() {
   return (
-    <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden">
+    <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden" data-aos="fade"
+>
       {/* Background image */}
       <img
         src="/ocean.jpg"
@@ -17,7 +18,8 @@ export default function QuoteSection() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
         <blockquote
           className="text-[#333333] text-2xl md:text-3xl font-serif max-w-3xl leading-snug mb-2"
-          data-aos="fade-up"
+          data-aos="fade"
+
         >
           “Therapy can be a space where you invest in yourself—one of the highest
           forms of self-care.”

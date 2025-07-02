@@ -2,10 +2,12 @@
 
 export default function Hero() {
   return (
-    <main className="relative w-full py-12 bg-white">
+    <main className="relative w-full py-12 bg-white" data-aos="fade"
+>
       <div
         className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10"
-        data-aos="fade-up"
+        data-aos="fade"
+
       >
         {/* Text Content */}
         <div className="w-full md:w-1/2">

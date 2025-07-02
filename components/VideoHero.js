@@ -12,7 +12,8 @@ export default function VideoHero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden bg-[#f2f1e8]">
+    <section className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden bg-[#f2f1e8]" data-aos="fade"
+>
       {/* Video wrapper with padding */}
       <div className="w-full h-full p-6 md:p-16">
         <video
@@ -31,7 +32,8 @@ export default function VideoHero() {
       {/* Hero text */}
       <div
         className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
-        data-aos="fade-up"
+        data-aos="fade"
+
       >
         <h1 className="text-5xl md:text-6xl font-serif text-textDark mb-4">
           Dr. Serena Blake, PsyD
