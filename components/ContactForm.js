@@ -67,21 +67,18 @@ export default function ContactForm({ showForm, onClose }) {
   if (!showForm) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
       <div
-  ref={modalRef}
-  className="
-    bg-[#e1ded2] 
-    w-full max-w-lg 
-    p-8 
-    rounded-lg 
-    relative 
-    text-gray-800 
-    shadow-2xl
-    max-h-[85vh] 
-    overflow-y-auto
-  "
->
+        ref={modalRef}
+        className="
+          bg-[#e1ded2]
+          w-full max-w-lg
+          p-6 md:p-8
+          rounded-lg
+          relative text-gray-800 shadow-2xl
+          max-h-[90vh] overflow-y-auto
+          "
+      >
         <button
           onClick={onClose}
           className="absolute top-2 right-4 text-gray-600 hover:text-black text-2xl cursor-pointer"
@@ -89,17 +86,17 @@ export default function ContactForm({ showForm, onClose }) {
           ✕
         </button>
 
-        <h2 className="text-3xl font-serif mb-6 text-center text-gray-800">
+        <h2 className="text-2xl md:text-3xl font-serif mb-6 text-center text-gray-800">
           Contact Dr. Blake
         </h2>
 
         {submitted && (
-          <div className="bg-green-200 text-green-800 px-4 py-2 rounded mb-4 text-center">
+          <div className="bg-green-200 text-green-800 px-4 py-2 rounded mb-4 text-center text-sm md:text-base">
             Thank you! Your message has been submitted.
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-4">
           {[
             { name: "name", label: "Name" },
             { name: "phone", label: "Phone" },
@@ -113,16 +110,17 @@ export default function ContactForm({ showForm, onClose }) {
                 onChange={handleChange}
                 placeholder=" "
                 className="
-                  peer w-full border-b-2 border-gray-400 focus:border-gray-800 
+                  peer w-full border-b-2 border-gray-400 focus:border-gray-800
                   outline-none bg-transparent pt-6 pb-2 px-2
+                  text-sm md:text-base
                 "
               />
               <label
                 className="
-                  absolute left-0 top-2 text-gray-500 text-sm 
-                  transition-all 
-                  peer-placeholder-shown:top-6 peer-placeholder-shown:text-base 
-                  peer-focus:top-2 peer-focus:text-sm
+                  absolute left-0 top-2 text-gray-500 text-xs md:text-sm
+                  transition-all
+                  peer-placeholder-shown:top-6 peer-placeholder-shown:text-base
+                  peer-focus:top-2 peer-focus:text-xs md:peer-focus:text-sm
                   pointer-events-none
                 "
               >
@@ -136,6 +134,7 @@ export default function ContactForm({ showForm, onClose }) {
             </div>
           ))}
 
+          {/* Preferred Contact Method */}
           <div className="relative">
             <select
               name="preferredContactMethod"
@@ -143,7 +142,7 @@ export default function ContactForm({ showForm, onClose }) {
               onChange={handleChange}
               className="
                 w-full border-b-2 border-gray-400 focus:border-gray-800
-                bg-transparent pt-6 pb-2 px-2 cursor-pointer appearance-none
+                bg-transparent pt-6 pb-2 px-2 text-sm md:text-base cursor-pointer appearance-none
               "
             >
               <option value="">Preferred Contact Method</option>
@@ -159,6 +158,7 @@ export default function ContactForm({ showForm, onClose }) {
             )}
           </div>
 
+          {/* Preferred Time */}
           <div className="relative">
             <input
               type="text"
@@ -167,16 +167,16 @@ export default function ContactForm({ showForm, onClose }) {
               onChange={handleChange}
               placeholder=" "
               className="
-                peer w-full border-b-2 border-gray-400 focus:border-gray-800 
-                outline-none bg-transparent pt-6 pb-2 px-2
+                peer w-full border-b-2 border-gray-400 focus:border-gray-800
+                outline-none bg-transparent pt-6 pb-2 px-2 text-sm md:text-base
               "
             />
             <label
               className="
-                absolute left-0 top-2 text-gray-500 text-sm 
-                transition-all 
-                peer-placeholder-shown:top-6 peer-placeholder-shown:text-base 
-                peer-focus:top-2 peer-focus:text-sm
+                absolute left-0 top-2 text-gray-500 text-xs md:text-sm
+                transition-all
+                peer-placeholder-shown:top-6 peer-placeholder-shown:text-base
+                peer-focus:top-2 peer-focus:text-xs md:peer-focus:text-sm
                 pointer-events-none
               "
             >
@@ -192,6 +192,7 @@ export default function ContactForm({ showForm, onClose }) {
             )}
           </div>
 
+          {/* Message */}
           <div className="relative">
             <textarea
               name="message"
@@ -200,16 +201,17 @@ export default function ContactForm({ showForm, onClose }) {
               placeholder=" "
               rows={3}
               className="
-                peer w-full border-b-2 border-gray-400 focus:border-gray-800 
+                peer w-full border-b-2 border-gray-400 focus:border-gray-800
                 outline-none bg-transparent pt-6 pb-2 px-2 resize-none
+                text-sm md:text-base
               "
             />
             <label
               className="
-                absolute left-0 top-2 text-gray-500 text-sm 
-                transition-all 
-                peer-placeholder-shown:top-6 peer-placeholder-shown:text-base 
-                peer-focus:top-2 peer-focus:text-sm
+                absolute left-0 top-2 text-gray-500 text-xs md:text-sm
+                transition-all
+                peer-placeholder-shown:top-6 peer-placeholder-shown:text-base
+                peer-focus:top-2 peer-focus:text-xs md:peer-focus:text-sm
                 pointer-events-none
               "
             >
@@ -228,7 +230,7 @@ export default function ContactForm({ showForm, onClose }) {
               onChange={handleChange}
               className="mt-1 cursor-pointer"
             />
-            <label className="text-gray-700 cursor-default">
+            <label className="text-gray-700 text-xs md:text-sm cursor-default">
               I agree to be contacted.
             </label>
           </div>
@@ -238,7 +240,7 @@ export default function ContactForm({ showForm, onClose }) {
 
           <button
             type="submit"
-            className="bg-gray-800 hover:bg-gray-700 text-white font-medium px-6 py-2 rounded w-full"
+            className="bg-gray-800 hover:bg-gray-700 text-white font-medium px-6 py-3 rounded w-full text-sm md:text-base"
           >
             Submit
           </button>
