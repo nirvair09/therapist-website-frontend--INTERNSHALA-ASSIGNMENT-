@@ -17,12 +17,16 @@ export default function ContactForm({ showForm, onClose }) {
   const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
   const modalRef = useRef(null);
 
+  // Click outside to close
   useEffect(() => {
     function handleClickOutside(e) {
       if (modalRef.current && !modalRef.current.contains(e.target)) {
-        onClose();
+        handleClose();
       }
     }
     if (showForm) {
@@ -31,11 +35,14 @@ export default function ContactForm({ showForm, onClose }) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [showForm, onClose]);
+  }, [showForm]);
 
   const handleChange = (e) => {
     const { name, type, checked, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
   const validate = () => {
@@ -43,9 +50,11 @@ export default function ContactForm({ showForm, onClose }) {
     if (!form.name.trim()) newErrors.name = "Name is required.";
     if (!form.phone.trim()) newErrors.phone = "Phone is required.";
     if (!form.email.includes("@")) newErrors.email = "Valid email is required.";
-    if (!form.preferredContactMethod) newErrors.preferredContactMethod = "Please select a preferred contact method.";
+    if (!form.preferredContactMethod)
+      newErrors.preferredContactMethod = "Please select a preferred contact method.";
     if (!form.message.trim()) newErrors.message = "Message is required.";
-    if (!form.preferredTime.trim()) newErrors.preferredTime = "Preferred time is required.";
+    if (!form.preferredTime.trim())
+      newErrors.preferredTime = "Preferred time is required.";
     if (!form.agree) newErrors.agree = "You must agree to be contacted.";
     return newErrors;
   };
@@ -56,31 +65,56 @@ export default function ContactForm({ showForm, onClose }) {
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
       setSubmitted(true);
+      setShowSuccess(true);
       setTimeout(() => {
+        setShowSuccess(false);
         setSubmitted(false);
-        onClose();
+        handleClose();
         setForm(initialState);
       }, 2000);
     }
   };
 
-  if (!showForm) return null;
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsClosing(false);
+      onClose();
+    }, 300);
+  };
+
+  if (!showForm && !showSuccess) return null;
+
+  if (submitted && showSuccess) {
+    return createPortal(
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
+        <div className="bg-green-100 text-green-800 px-6 py-8 rounded-lg shadow-xl text-center max-w-sm w-full">
+          <div className="text-5xl mb-3">✅</div>
+          <p className="text-lg font-semibold mb-1">Message Submitted</p>
+          <p className="text-sm">We’ll get back to you shortly.</p>
+        </div>
+      </div>,
+      document.body
+    );
+  }
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
       <div
         ref={modalRef}
-        className="
+        className={`
           bg-[#e1ded2]
           w-full max-w-lg
           p-6 md:p-8
           rounded-lg
           relative text-gray-800 shadow-2xl
           max-h-[90vh] overflow-y-auto
-          "
+          transition-all duration-300
+          ${isClosing ? "opacity-0 scale-95" : "opacity-100 scale-100"}
+        `}
       >
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-2 right-4 text-gray-600 hover:text-black text-2xl cursor-pointer"
         >
           ✕
@@ -90,18 +124,8 @@ export default function ContactForm({ showForm, onClose }) {
           Contact Dr. Blake
         </h2>
 
-        {submitted && (
-          <div className="bg-green-200 text-green-800 px-4 py-2 rounded mb-4 text-center text-sm md:text-base">
-            Thank you! Your message has been submitted.
-          </div>
-        )}
-
         <form onSubmit={handleSubmit} className="space-y-4">
-          {[
-            { name: "name", label: "Name" },
-            { name: "phone", label: "Phone" },
-            { name: "email", label: "Email", type: "email" },
-          ].map((field) => (
+          {[{ name: "name", label: "Name" }, { name: "phone", label: "Phone" }, { name: "email", label: "Email", type: "email" }].map((field) => (
             <div key={field.name} className="relative">
               <input
                 type={field.type || "text"}
