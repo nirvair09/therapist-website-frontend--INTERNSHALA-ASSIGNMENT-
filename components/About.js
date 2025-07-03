@@ -1,14 +1,18 @@
 "use client";
 
+import { useState } from "react";
+import ContactForm from "./ContactForm";
+
 export default function About() {
+  const [showContactForm, setShowContactForm] = useState(false);
+
   return (
     <section
       className="py-20 px-4 w-full mx-auto text-center bg-[#f2f1e8]"
       data-aos="fade"
-
     >
       <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-6">
-        Jennifer Hahm, Ph.D., Licensed Psychologist
+        Dr. Serena Blake, PsyD, Licensed Psychologist
       </h2>
 
       <p className="text-lg text-gray-800 leading-relaxed mb-4">
@@ -17,7 +21,7 @@ export default function About() {
           onClick={(e) => e.preventDefault()}
           className="underline hover:text-primary transition"
         >
-          jennifer@drjenniferhahm.com
+          serena@blakepsychology.com
         </a>
       </p>
 
@@ -28,20 +32,12 @@ export default function About() {
           onClick={(e) => e.preventDefault()}
           className="underline hover:text-primary transition"
         >
-          (248) 939-8150
-        </a>
-        &nbsp; | &nbsp; Fax:{" "}
-        <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
-          className="underline hover:text-primary transition"
-        >
-          (248) 939-8190
+          (323) 555-0192
         </a>
       </p>
 
       <p className="text-lg text-gray-800 leading-relaxed mb-8">
-        28175 Haggerty Rd, Novi, MI 48377
+        1287 Maplewood Drive, Los Angeles, CA 90026
       </p>
 
       <div className="flex justify-center gap-6 mb-8 flex-wrap">
@@ -68,14 +64,29 @@ export default function About() {
         </a>
       </div>
 
-      <p className="text-sm text-gray-800">
-        © 2025 Jennifer Hahm Ph.D. Psychological Services, PLLC. All rights reserved.
+      <button
+        onClick={() => setShowContactForm(true)}
+        className="bg-blue-200 hover:bg-blue-300 text-gray-700 font-semibold px-6 py-3 rounded transition"
+      >
+        Contact Dr. Blake
+      </button>
+
+      <p className="text-sm text-gray-800 mt-6">
+        © 2025 Dr. Serena Blake Psychological Services, PLLC. All rights reserved.
       </p>
 
       {/* Divider Line */}
       <div className="flex justify-center mt-32 mb-8">
         <div className="w-[300px] h-px bg-gray-500"></div>
       </div>
+
+      {/* Contact Form Modal */}
+      {showContactForm && (
+        <ContactForm
+          showForm={showContactForm}
+          onClose={() => setShowContactForm(false)}
+        />
+      )}
     </section>
   );
 }

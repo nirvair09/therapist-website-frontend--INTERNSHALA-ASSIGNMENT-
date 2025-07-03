@@ -56,10 +56,6 @@ export default function FAQ() {
           </div>
         ))}
       </div>
-      {/* Divider Line */}
-      <div className="flex justify-center mt-32 mb-8">
-        <div className="w-300 h-px bg-gray-500"></div>
-      </div>
     </section>
   );
 }
