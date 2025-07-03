@@ -1,4 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Therapist Website Frontend (Internshala Assignment)
+
+This is a responsive therapist website frontend built with **Next.js 14** as part of an Internshala assignment.
+
+It includes animations, a modal contact form, and a clean, modern UI inspired by [drjenniferhahm.com](https://www.drjenniferhahm.com).
+
+---
+
+## 🚀 Live Demo
+
+👉 **[View the deployed site here](https://therapist-website-frontend-internsh.vercel.app/)**
+
+---
+
+## ✨ Features
+
+✅ Next.js 14 (App Router)  
+✅ Google fonts via `next/font`  
+✅ Responsive, modern layout  
+✅ Smooth scroll animations using AOS  
+✅ Modal popup contact form  
+✅ Floating labels on form inputs  
+✅ Client-side form validation  
+✅ Mobile-friendly design  
+✅ Deployed on Vercel
+
+---
+
+## 📦 Tech Stack
+
+- **Next.js 14**
+- **React**
+- **Tailwind CSS**
+- **AOS (Animate On Scroll)**
+- **Vercel**
+
+---
+
+## 💻 Local Development
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/nirvair09/therapist-website-frontend--INTERNSHALA-ASSIGNMENT-.git
+cd therapist-website-frontend--INTERNSHALA-ASSIGNMENT-
+
 
 ## Getting Started
 
