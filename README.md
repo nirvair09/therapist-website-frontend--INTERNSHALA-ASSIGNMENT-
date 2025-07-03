@@ -6,9 +6,7 @@ It includes animations, a modal contact form, and a clean, modern UI inspired by
 
 ---
 
-## 🚀 Live Demo
-
-👉 **[View the deployed site here](https://therapist-website-frontend-internsh.vercel.app/)**
+✅ **Live Demo:** [Therapist Website on Vercel](https://therapist-website-frontend-internsh.vercel.app/)
 
 ---
 
